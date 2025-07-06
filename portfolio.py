@@ -31,6 +31,7 @@ class Portfolio:
                         'Price': row['Price'],
                         'Value': shares * row['Price']
                     })
+                    print(f"BUY: {shares:.2f} shares at ${row['Price']:.2f} on {i.date()}")
                     
             elif row['Position'] == -1:  # Sell signal
                 if shares > 0:
@@ -42,6 +43,7 @@ class Portfolio:
                         'Price': row['Price'],
                         'Value': cash
                     })
+                    print(f"SELL: {shares:.2f} shares at ${row['Price']:.2f} on {i.date()}")
                     shares = 0
             
             # Calculate current portfolio value

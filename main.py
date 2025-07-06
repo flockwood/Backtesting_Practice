@@ -7,7 +7,7 @@ from visualizer import Visualizer
 
 def main():
     # Configuration
-    TICKER = 'TSLA'
+    TICKER = 'AAPL'
     INITIAL_CASH = 10000
     MA_PERIOD = 20
     
@@ -41,8 +41,11 @@ def main():
     print("\nTRADE LOG:")
     print("-" * 30)
     trade_log = portfolio.get_trade_log()
-    for _, trade in trade_log.iterrows():
-        print(f"{trade['Action']}: {trade['Shares']:.2f} shares at ${trade['Price']:.2f} on {trade['Date'].date()}")
+    if len(trade_log) > 0:
+        for _, trade in trade_log.iterrows():
+            print(f"{trade['Action']}: {trade['Shares']:.2f} shares at ${trade['Price']:.2f} on {trade['Date'].date()}")
+    else:
+        print("No trades executed during this period")
     
     print("\nPERFORMANCE RESULTS:")
     print("="*50)
