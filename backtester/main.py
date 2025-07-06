@@ -1,9 +1,9 @@
 # main.py
 from datetime import datetime, timedelta
-from data_handler import DataHandler
-from strategy import Strategy
-from portfolio import Portfolio
-from visualizer import Visualizer
+from backtester.data_handler import DataHandler
+from backtester.strategy import Strategy
+from backtester.portfolio import Portfolio
+from backtester.visualizer import Visualizer
 
 def main():
     # Configuration

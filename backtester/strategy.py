@@ -10,7 +10,7 @@ class Strategy:
     
     def moving_average_crossover(self, short_window=20, long_window=50):
         """Generate signals based on moving average crossover"""
-        from indicators import TechnicalIndicators
+        from backtester.indicators import TechnicalIndicators
         
         # Calculate moving averages
         self.signals['Short_MA'] = TechnicalIndicators.simple_moving_average(
@@ -32,7 +32,7 @@ class Strategy:
     
     def simple_ma_strategy(self, ma_period=20):
         """Simple strategy: Buy when price > MA, Sell when price < MA"""
-        from indicators import TechnicalIndicators
+        from backtester.indicators import TechnicalIndicators
         
         # Calculate moving average
         self.signals['MA'] = TechnicalIndicators.simple_moving_average(
